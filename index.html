@@ -1,0 +1,271 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#1F4C43">
+  <meta name="description" content="Clear, no-pressure Medicare guidance for families across Los Angeles and Orange County.">
+  <title>Bridge One | Medicare Guidance</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans:wght@400;500;600;700&family=Noto+Serif:wght@600;700&display=swap" rel="stylesheet">
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='12' fill='%231F4C43'/%3E%3Cpath d='M10 41h44M14 40c4-20 32-20 36 0M20 41V29M44 41V29' fill='none' stroke='%23C08A28' stroke-width='5' stroke-linecap='round'/%3E%3C/svg%3E">
+  <style>
+    :root {
+      --color-bg: #F3F5F1;
+      --color-surface: #FBFCF9;
+      --color-ink: #22302C;
+      --color-muted: #56625E;
+      --color-primary: #1F4C43;
+      --color-primary-light: #3F6F62;
+      --color-accent: #C08A28;
+      --color-accent-hover: #A8741E;
+      --color-line: #D9D3C4;
+      --color-focus: #1268A0;
+      --max-width: 1120px;
+    }
+
+    [data-theme="dark"] {
+      --color-bg: #16201D;
+      --color-surface: #1D2A26;
+      --color-ink: #F1F4EF;
+      --color-muted: #C3CCC7;
+      --color-primary: #A9D0C4;
+      --color-primary-light: #7EAA9D;
+      --color-accent: #E0AE50;
+      --color-accent-hover: #F0C36B;
+      --color-line: #40514B;
+      --color-focus: #8CC8ED;
+    }
+
+    @media (prefers-color-scheme: dark) {
+      :root:not([data-theme="light"]) {
+        --color-bg: #16201D;
+        --color-surface: #1D2A26;
+        --color-ink: #F1F4EF;
+        --color-muted: #C3CCC7;
+        --color-primary: #A9D0C4;
+        --color-primary-light: #7EAA9D;
+        --color-accent: #E0AE50;
+        --color-accent-hover: #F0C36B;
+        --color-line: #40514B;
+        --color-focus: #8CC8ED;
+      }
+    }
+
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body {
+      margin: 0;
+      color: var(--color-ink);
+      background: var(--color-bg);
+      font-family: "Noto Sans", Arial, sans-serif;
+      font-size: 18px;
+      line-height: 1.75;
+      text-rendering: optimizeLegibility;
+    }
+    a { color: inherit; }
+    a:focus-visible, button:focus-visible {
+      outline: 3px solid var(--color-focus);
+      outline-offset: 4px;
+      border-radius: 4px;
+    }
+    .container { width: min(calc(100% - 40px), var(--max-width)); margin-inline: auto; }
+    .skip-link { position: fixed; left: 16px; top: -80px; z-index: 100; padding: 10px 16px; background: var(--color-ink); color: var(--color-bg); }
+    .skip-link:focus { top: 16px; }
+
+    header { border-bottom: 1px solid var(--color-line); background: color-mix(in srgb, var(--color-bg) 92%, transparent); }
+    .header-inner { min-height: 82px; display: flex; align-items: center; justify-content: space-between; gap: 24px; }
+    .wordmark { text-decoration: none; font: 700 1.45rem/1.1 "Noto Serif", Georgia, serif; color: var(--color-primary); letter-spacing: -.02em; }
+    .header-phone { font-weight: 700; text-decoration-thickness: 2px; text-underline-offset: 5px; }
+
+    main section { border-bottom: 1px solid var(--color-line); }
+    .hero { position: relative; overflow: hidden; padding: clamp(72px, 10vw, 132px) 0 clamp(64px, 9vw, 112px); }
+    .hero-grid { display: grid; grid-template-columns: minmax(0, 1fr) minmax(280px, .72fr); align-items: center; gap: clamp(36px, 7vw, 92px); }
+    .eyebrow { margin: 0 0 18px; color: var(--color-primary-light); font-weight: 700; letter-spacing: .04em; }
+    h1, h2 { font-family: "Noto Serif", Georgia, serif; color: var(--color-primary); letter-spacing: -.035em; }
+    h1 { max-width: 760px; margin: 0; font-size: clamp(2.5rem, 6vw, 4.75rem); line-height: 1.08; }
+    h2 { margin: 0 0 20px; font-size: clamp(2rem, 4vw, 3rem); line-height: 1.18; }
+    .hero-copy { max-width: 690px; margin: 28px 0 34px; color: var(--color-muted); font-size: 1.15rem; }
+    .cta-row { display: flex; flex-wrap: wrap; gap: 14px; }
+    .button { min-height: 56px; display: inline-flex; align-items: center; justify-content: center; padding: 13px 22px; border: 2px solid var(--color-accent); text-decoration: none; font-weight: 700; transition: background-color .15s ease, color .15s ease, transform .15s ease; }
+    .button.primary { background: var(--color-accent); color: #17201D; }
+    .button.primary:hover { background: var(--color-accent-hover); border-color: var(--color-accent-hover); transform: translateY(-1px); }
+    .button.secondary { color: var(--color-primary); background: transparent; }
+    .button.secondary:hover { background: color-mix(in srgb, var(--color-accent) 12%, transparent); }
+
+    .bridge-art { width: 100%; color: var(--color-primary); }
+    .bridge-art svg { display: block; width: 100%; height: auto; overflow: visible; }
+    .bridge-art .arch { stroke: currentColor; }
+    .bridge-art .sun { fill: var(--color-accent); }
+    .bridge-art .reflection { stroke: var(--color-primary-light); }
+
+    .trust { background: var(--color-primary); color: #F7FAF8; }
+    .trust-list { list-style: none; margin: 0; padding: 28px 0; display: grid; grid-template-columns: repeat(3, 1fr); }
+    .trust-list li { padding: 8px 28px; font-weight: 600; }
+    .trust-list li + li { border-left: 1px solid color-mix(in srgb, #fff 28%, transparent); }
+
+    .section-pad { padding: clamp(64px, 9vw, 112px) 0; }
+    .section-intro { max-width: 700px; margin: 0 0 40px; color: var(--color-muted); }
+    .questions { margin: 0; padding: 0; list-style: none; border-top: 1px solid var(--color-line); }
+    .questions li { display: grid; grid-template-columns: 46px 1fr; gap: 18px; align-items: start; padding: 24px 0; border-bottom: 1px solid var(--color-line); font-size: clamp(1.08rem, 2vw, 1.3rem); font-weight: 600; }
+    .number { color: var(--color-accent); font-family: "Noto Serif", Georgia, serif; font-weight: 700; }
+
+    .about-grid { display: grid; grid-template-columns: minmax(220px, .45fr) minmax(0, 1fr); gap: clamp(36px, 8vw, 100px); align-items: start; }
+    .name-lockup { border-top: 4px solid var(--color-accent); padding-top: 20px; }
+    .name-lockup strong { display: block; font: 700 clamp(2rem, 4vw, 3rem)/1.15 "Noto Serif", Georgia, serif; color: var(--color-primary); }
+    .name-lockup span { color: var(--color-muted); }
+    .about-copy { margin: 0; font-size: 1.08rem; }
+
+    .contact-heading { max-width: 720px; }
+    .contact-grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); border-top: 1px solid var(--color-line); border-bottom: 1px solid var(--color-line); }
+    .contact-card { padding: clamp(28px, 5vw, 52px); }
+    .contact-card + .contact-card { border-left: 1px solid var(--color-line); }
+    .contact-card h3 { margin: 0 0 12px; color: var(--color-primary); font: 700 1.45rem/1.3 "Noto Serif", Georgia, serif; }
+    .contact-card p { margin: 0 0 24px; color: var(--color-muted); overflow-wrap: anywhere; }
+
+    footer { padding: 52px 0; background: var(--color-surface); color: var(--color-muted); font-size: .88rem; }
+    .footer-meta { display: flex; flex-wrap: wrap; justify-content: space-between; gap: 12px 28px; margin-bottom: 28px; padding-bottom: 24px; border-bottom: 1px solid var(--color-line); color: var(--color-ink); font-weight: 600; }
+    .disclosures { max-width: 920px; }
+    .disclosures p { margin: 0 0 16px; }
+    .review-note { padding-left: 14px; border-left: 3px solid var(--color-accent); }
+
+    @media (max-width: 760px) {
+      .container { width: min(calc(100% - 28px), var(--max-width)); }
+      .header-inner { min-height: 72px; }
+      .header-phone { font-size: .92rem; }
+      .hero-grid { grid-template-columns: 1fr; }
+      .bridge-art { width: min(80%, 360px); margin-inline: auto; order: -1; }
+      .trust-list { grid-template-columns: 1fr; padding: 14px 0; }
+      .trust-list li { padding: 14px 0; }
+      .trust-list li + li { border-left: 0; border-top: 1px solid color-mix(in srgb, #fff 28%, transparent); }
+      .about-grid, .contact-grid { grid-template-columns: 1fr; }
+      .contact-card { padding-inline: 0; }
+      .contact-card + .contact-card { border-left: 0; border-top: 1px solid var(--color-line); }
+      .button { width: 100%; }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      html { scroll-behavior: auto; }
+      *, *::before, *::after { transition-duration: .01ms !important; animation-duration: .01ms !important; animation-iteration-count: 1 !important; }
+    }
+  </style>
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to main content</a>
+  <header>
+    <div class="container header-inner">
+      <a class="wordmark" href="#main" aria-label="Bridge One home">Bridge One</a>
+      <a class="header-phone" data-phone-link href="tel:+17146943254"><span data-phone-display>(714) 694-3254</span></a>
+    </div>
+  </header>
+
+  <main id="main">
+    <section class="hero" aria-labelledby="hero-title">
+      <div class="container hero-grid">
+        <div>
+          <p class="eyebrow">Medicare guidance for Southern California families</p>
+          <h1 id="hero-title">Getting Medicare-Ready Doesn't Have to Be Confusing</h1>
+          <p class="hero-copy">A clear, no-pressure walkthrough of your Medicare options — in plain English, on your schedule.</p>
+          <div class="cta-row">
+            <a class="button primary" data-phone-link href="tel:+17146943254">Call for a Free Review</a>
+            <a class="button secondary" data-email-link href="mailto:kincaredesk@gmail.com">Email Us</a>
+          </div>
+        </div>
+        <div class="bridge-art" aria-hidden="true">
+          <svg viewBox="0 0 420 330" role="img">
+            <circle class="sun" cx="316" cy="67" r="23" opacity=".95"/>
+            <path class="arch" d="M28 244H392M62 243C87 92 333 92 358 243M96 243V181M324 243V181" fill="none" stroke-width="8" stroke-linecap="round"/>
+            <path class="reflection" d="M76 277c55-19 213-19 268 0M111 304c51-12 148-12 198 0" fill="none" stroke-width="4" stroke-linecap="round" opacity=".62"/>
+          </svg>
+        </div>
+      </div>
+    </section>
+
+    <section class="trust" aria-label="Credentials and service details">
+      <div class="container">
+        <ul class="trust-list">
+          <li>Licensed in California — Lic #<span data-license>4330248</span></li>
+          <li>Serving Los Angeles &amp; Orange County</li>
+          <li>No-Cost, No-Obligation Consultation</li>
+        </ul>
+      </div>
+    </section>
+
+    <section class="section-pad" aria-labelledby="questions-title">
+      <div class="container">
+        <h2 id="questions-title">Common Questions We Help With</h2>
+        <p class="section-intro">Medicare decisions can feel technical. We slow the conversation down and help you understand the questions that matter to your situation.</p>
+        <ol class="questions">
+          <li><span class="number">01</span><span>Am I still in the right plan for my needs?</span></li>
+          <li><span class="number">02</span><span>What does Medicare actually cover — and what doesn't it?</span></li>
+          <li><span class="number">03</span><span>Can I compare my options without a sales pitch?</span></li>
+          <li><span class="number">04</span><span>Is it too late to make a change this year?</span></li>
+        </ol>
+      </div>
+    </section>
+
+    <section class="section-pad" aria-labelledby="about-title">
+      <div class="container about-grid">
+        <div class="name-lockup">
+          <strong id="about-title">Jaden Lee</strong>
+          <span>Bridge One</span>
+        </div>
+        <p class="about-copy">Jaden Lee is a California-licensed insurance agent based in Southern California, helping local families make sense of Medicare — clearly, patiently, and without pressure. Whether you're reviewing your own coverage or helping a parent, Bridge One is here to walk through it with you.</p>
+      </div>
+    </section>
+
+    <section class="section-pad" aria-labelledby="contact-title">
+      <div class="container">
+        <div class="contact-heading">
+          <h2 id="contact-title">Start with a simple conversation</h2>
+          <p class="section-intro">Choose the way that's most comfortable for you. There is no cost and no obligation.</p>
+        </div>
+        <div class="contact-grid">
+          <article class="contact-card">
+            <h3>Prefer to talk it through?</h3>
+            <p>Call <strong data-phone-display>(714) 694-3254</strong></p>
+            <a class="button primary" data-phone-link href="tel:+17146943254">Call Now</a>
+          </article>
+          <article class="contact-card">
+            <h3>Have a question first?</h3>
+            <p>Email <strong data-email-display>kincaredesk@gmail.com</strong></p>
+            <a class="button secondary" data-email-link href="mailto:kincaredesk@gmail.com">Send an Email</a>
+          </article>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="container">
+      <div class="footer-meta">
+        <span>Bridge One · CA Lic #<span data-license>4330248</span></span>
+        <span data-address>Southern California</span>
+      </div>
+      <div class="disclosures">
+        <p>We do not offer every plan available in your area. Currently we represent <span data-organizations>[ ]</span> organizations which offer <span data-products>[ ]</span> products in your area. Please contact Medicare.gov, 1-800-MEDICARE, or your local State Health Insurance Assistance Program (SHIP) to get information on all of your options.</p>
+        <p>This website is operated by a licensed insurance agent (CA Lic #<span data-license>4330248</span>) and is not connected with or endorsed by the U.S. government or the federal Medicare program.</p>
+        <p>We do not discriminate on the basis of race, color, national origin, disability, age, or sex in our services.</p>
+        <p class="review-note"><strong>Compliance review required:</strong> Organization and product counts must be completed before public advertising.</p>
+      </div>
+    </div>
+  </footer>
+
+  <script src="site-config.js"></script>
+  <script>
+    (() => {
+      const c = window.BRIDGE_ONE_CONFIG;
+      if (!c) return;
+      document.querySelectorAll("[data-phone-display]").forEach((el) => { el.textContent = c.phoneDisplay; });
+      document.querySelectorAll("[data-phone-link]").forEach((el) => { el.href = `tel:${c.phoneHref}`; });
+      document.querySelectorAll("[data-email-display]").forEach((el) => { el.textContent = c.email; });
+      document.querySelectorAll("[data-email-link]").forEach((el) => { el.href = `mailto:${c.email}`; });
+      document.querySelectorAll("[data-license]").forEach((el) => { el.textContent = c.licenseNumber; });
+      document.querySelectorAll("[data-organizations]").forEach((el) => { el.textContent = c.representedOrganizations; });
+      document.querySelectorAll("[data-products]").forEach((el) => { el.textContent = c.representedProducts; });
+      document.querySelectorAll("[data-address]").forEach((el) => { el.textContent = c.address; });
+    })();
+  </script>
+</body>
+</html>
