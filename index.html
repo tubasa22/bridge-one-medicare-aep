@@ -156,7 +156,7 @@
   <header>
     <div class="container header-inner">
       <a class="wordmark" href="#main" aria-label="Bridge One home">Bridge One</a>
-      <a class="header-phone" data-phone-link href="tel:+17146943254"><span data-phone-display>(714) 694-3254</span></a>
+      <a class="header-phone" data-phone-link href="tel:+15622426177"><span data-phone-display>(562) 242-6177</span></a>
     </div>
   </header>
 
@@ -168,8 +168,8 @@
           <h1 id="hero-title">Getting Medicare-Ready Doesn't Have to Be Confusing</h1>
           <p class="hero-copy">A clear, no-pressure walkthrough of your Medicare options — in plain English, on your schedule.</p>
           <div class="cta-row">
-            <a class="button primary" data-phone-link href="tel:+17146943254">Call for a Free Review</a>
-            <a class="button secondary" data-email-link href="mailto:kincaredesk@gmail.com">Email Us</a>
+            <a class="button primary" data-phone-link href="tel:+15622426177">Call for a Free Review</a>
+            <a class="button secondary" data-email-link href="mailto:bridgeone.jaden@gmail.com">Email Us</a>
           </div>
         </div>
         <div class="bridge-art" aria-hidden="true">
@@ -224,13 +224,13 @@
         <div class="contact-grid">
           <article class="contact-card">
             <h3>Prefer to talk it through?</h3>
-            <p>Call <strong data-phone-display>(714) 694-3254</strong></p>
-            <a class="button primary" data-phone-link href="tel:+17146943254">Call Now</a>
+            <p>Call <strong data-phone-display>(562) 242-6177</strong></p>
+            <a class="button primary" data-phone-link href="tel:+15622426177">Call Now</a>
           </article>
           <article class="contact-card">
             <h3>Have a question first?</h3>
-            <p>Email <strong data-email-display>kincaredesk@gmail.com</strong></p>
-            <a class="button secondary" data-email-link href="mailto:kincaredesk@gmail.com">Send an Email</a>
+            <p>Email <strong data-email-display>bridgeone.jaden@gmail.com</strong></p>
+            <a class="button secondary" data-email-link href="mailto:bridgeone.jaden@gmail.com">Send an Email</a>
           </article>
         </div>
       </div>
@@ -244,10 +244,9 @@
         <span data-address>Southern California</span>
       </div>
       <div class="disclosures">
-        <p>We do not offer every plan available in your area. Currently we represent <span data-organizations>[ ]</span> organizations which offer <span data-products>[ ]</span> products in your area. Please contact Medicare.gov, 1-800-MEDICARE, or your local State Health Insurance Assistance Program (SHIP) to get information on all of your options.</p>
+        <p>We do not offer every plan available in your area. Please contact Medicare.gov, 1-800-MEDICARE, or your local State Health Insurance Assistance Program (SHIP) to get information on all of your options.</p>
         <p>This website is operated by a licensed insurance agent (CA Lic #<span data-license>4330248</span>) and is not connected with or endorsed by the U.S. government or the federal Medicare program.</p>
         <p>We do not discriminate on the basis of race, color, national origin, disability, age, or sex in our services.</p>
-        <p class="review-note"><strong>Compliance review required:</strong> Organization and product counts must be completed before public advertising.</p>
       </div>
     </div>
   </footer>
@@ -262,8 +261,6 @@
       document.querySelectorAll("[data-email-display]").forEach((el) => { el.textContent = c.email; });
       document.querySelectorAll("[data-email-link]").forEach((el) => { el.href = `mailto:${c.email}`; });
       document.querySelectorAll("[data-license]").forEach((el) => { el.textContent = c.licenseNumber; });
-      document.querySelectorAll("[data-organizations]").forEach((el) => { el.textContent = c.representedOrganizations; });
-      document.querySelectorAll("[data-products]").forEach((el) => { el.textContent = c.representedProducts; });
       document.querySelectorAll("[data-address]").forEach((el) => { el.textContent = c.address; });
     })();
   </script>
