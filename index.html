@@ -107,6 +107,13 @@
 
     .section-pad { padding: clamp(64px, 9vw, 112px) 0; }
     .section-intro { max-width: 700px; margin: 0 0 40px; color: var(--color-muted); }
+    .new-to-medicare { background: var(--color-surface); }
+    .new-to-grid { display: grid; grid-template-columns: minmax(0, .82fr) minmax(0, 1.18fr); gap: clamp(44px, 8vw, 104px); align-items: start; }
+    .new-to-copy { margin: 0 0 30px; color: var(--color-muted); font-size: 1.08rem; }
+    .value-list { list-style: none; margin: 0 0 34px; padding: 0; border-top: 1px solid var(--color-line); }
+    .value-list li { position: relative; padding: 20px 0 20px 34px; border-bottom: 1px solid var(--color-line); font-weight: 600; }
+    .value-list li::before { content: ""; position: absolute; left: 0; top: 31px; width: 16px; height: 2px; background: var(--color-accent); }
+    .section-kicker { margin: 0 0 14px; color: var(--color-primary-light); font-weight: 700; }
     .questions { margin: 0; padding: 0; list-style: none; border-top: 1px solid var(--color-line); }
     .questions li { display: grid; grid-template-columns: 46px 1fr; gap: 18px; align-items: start; padding: 24px 0; border-bottom: 1px solid var(--color-line); font-size: clamp(1.08rem, 2vw, 1.3rem); font-weight: 600; }
     .number { color: var(--color-accent); font-family: "Noto Serif", Georgia, serif; font-weight: 700; }
@@ -139,7 +146,7 @@
       .trust-list { grid-template-columns: 1fr; padding: 14px 0; }
       .trust-list li { padding: 14px 0; }
       .trust-list li + li { border-left: 0; border-top: 1px solid color-mix(in srgb, #fff 28%, transparent); }
-      .about-grid, .contact-grid { grid-template-columns: 1fr; }
+      .new-to-grid, .about-grid, .contact-grid { grid-template-columns: 1fr; }
       .contact-card { padding-inline: 0; }
       .contact-card + .contact-card { border-left: 0; border-top: 1px solid var(--color-line); }
       .button { width: 100%; }
@@ -189,6 +196,27 @@
           <li>Serving Los Angeles &amp; Orange County</li>
           <li>No-Cost, No-Obligation Consultation</li>
         </ul>
+      </div>
+    </section>
+
+    <section class="section-pad new-to-medicare" aria-labelledby="new-to-title">
+      <div class="container new-to-grid">
+        <div>
+          <p class="section-kicker">New to Medicare?</p>
+          <h2 id="new-to-title">Turning 65 This Year?</h2>
+          <p class="new-to-copy">Medicare Part A, B, C, and D can feel like alphabet soup. We'll walk you through what each one actually covers, check whether your current medications are included, and confirm your doctors are in-network — in one simple, no-pressure conversation.</p>
+        </div>
+        <div>
+          <ul class="value-list">
+            <li>A plain-English walkthrough of Parts A, B, C, and D</li>
+            <li>A check on your prescription drug coverage</li>
+            <li>Confirmation that your doctors are in-network</li>
+          </ul>
+          <div class="cta-row">
+            <a class="button primary" data-phone-link href="tel:+15622426177">Call to Get Started</a>
+            <a class="button secondary" data-email-link href="mailto:bridgeone.jaden@gmail.com">Email Us</a>
+          </div>
+        </div>
       </div>
     </section>
 
@@ -244,14 +272,14 @@
         <span data-address>Southern California</span>
       </div>
       <div class="disclosures">
-        <p>We do not offer every plan available in your area. Please contact Medicare.gov, 1-800-MEDICARE, or your local State Health Insurance Assistance Program (SHIP) to get information on all of your options.</p>
+        <p>We do not offer every plan available in your area. Currently we represent <span data-organizations>[ ]</span> organizations which offer <span data-products>[ ]</span> products in your area. Please contact Medicare.gov, 1-800-MEDICARE, or your local State Health Insurance Assistance Program (SHIP) to get information on all of your options.</p>
         <p>This website is operated by a licensed insurance agent (CA Lic #<span data-license>4330248</span>) and is not connected with or endorsed by the U.S. government or the federal Medicare program.</p>
         <p>We do not discriminate on the basis of race, color, national origin, disability, age, or sex in our services.</p>
       </div>
     </div>
   </footer>
 
-  <script src="site-config.js?v=20260921-1"></script>
+  <script src="site-config.js?v=20260921-2"></script>
   <script>
     (() => {
       const c = window.BRIDGE_ONE_CONFIG;
@@ -261,6 +289,8 @@
       document.querySelectorAll("[data-email-display]").forEach((el) => { el.textContent = c.email; });
       document.querySelectorAll("[data-email-link]").forEach((el) => { el.href = `mailto:${c.email}`; });
       document.querySelectorAll("[data-license]").forEach((el) => { el.textContent = c.licenseNumber; });
+      document.querySelectorAll("[data-organizations]").forEach((el) => { el.textContent = c.representedOrganizations; });
+      document.querySelectorAll("[data-products]").forEach((el) => { el.textContent = c.representedProducts; });
       document.querySelectorAll("[data-address]").forEach((el) => { el.textContent = c.address; });
     })();
   </script>
