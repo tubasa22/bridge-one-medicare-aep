@@ -4,12 +4,15 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="theme-color" content="#1F4C43">
-  <meta name="description" content="Clear, no-pressure Medicare guidance for families across Los Angeles and Orange County.">
-  <title>Bridge One | Medicare Guidance</title>
+  <meta name="description" content="Clear, no-pressure Medicare guidance from Jaden Lee for families across Los Angeles and Orange County.">
+  <meta property="og:title" content="Jaden Lee | Medicare Guidance">
+  <meta property="og:site_name" content="Jaden Lee">
+  <meta property="og:description" content="Clear, no-pressure Medicare guidance for Southern California families.">
+  <title>Jaden Lee | Medicare Guidance</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Noto+Sans:wght@400;500;600;700&family=Noto+Serif:wght@600;700&display=swap" rel="stylesheet">
-  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='12' fill='%231F4C43'/%3E%3Cpath d='M10 41h44M14 40c4-20 32-20 36 0M20 41V29M44 41V29' fill='none' stroke='%23C08A28' stroke-width='5' stroke-linecap='round'/%3E%3C/svg%3E">
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='12' fill='%231F4C43'/%3E%3Ctext x='32' y='42' text-anchor='middle' font-family='Georgia,serif' font-size='30' font-weight='700' fill='%23E0AE50'%3EJL%3C/text%3E%3C/svg%3E">
   <style>
     :root {
       --color-bg: #F3F5F1;
@@ -76,12 +79,14 @@
 
     header { border-bottom: 1px solid var(--color-line); background: color-mix(in srgb, var(--color-bg) 92%, transparent); }
     .header-inner { min-height: 82px; display: flex; align-items: center; justify-content: space-between; gap: 24px; }
-    .wordmark { text-decoration: none; font: 700 1.45rem/1.1 "Noto Serif", Georgia, serif; color: var(--color-primary); letter-spacing: -.02em; }
+    .wordmark { display: flex; flex-direction: column; gap: 4px; text-decoration: none; color: var(--color-primary); }
+    .wordmark-name { font: 700 1.45rem/1.1 "Noto Serif", Georgia, serif; letter-spacing: -.02em; }
+    .wordmark-sub { color: var(--color-muted); font-size: .72rem; font-weight: 600; line-height: 1.25; letter-spacing: .015em; }
     .header-phone { font-weight: 700; text-decoration-thickness: 2px; text-underline-offset: 5px; }
 
     main section { border-bottom: 1px solid var(--color-line); }
     .hero { position: relative; overflow: hidden; padding: clamp(72px, 10vw, 132px) 0 clamp(64px, 9vw, 112px); }
-    .hero-grid { display: grid; grid-template-columns: minmax(0, 1fr) minmax(280px, .72fr); align-items: center; gap: clamp(36px, 7vw, 92px); }
+    .hero-grid { max-width: 860px; }
     .eyebrow { margin: 0 0 18px; color: var(--color-primary-light); font-weight: 700; letter-spacing: .04em; }
     h1, h2 { font-family: "Noto Serif", Georgia, serif; color: var(--color-primary); letter-spacing: -.035em; }
     h1 { max-width: 760px; margin: 0; font-size: clamp(2.5rem, 6vw, 4.75rem); line-height: 1.08; }
@@ -93,12 +98,6 @@
     .button.primary:hover { background: var(--color-accent-hover); border-color: var(--color-accent-hover); transform: translateY(-1px); }
     .button.secondary { color: var(--color-primary); background: transparent; }
     .button.secondary:hover { background: color-mix(in srgb, var(--color-accent) 12%, transparent); }
-
-    .bridge-art { width: 100%; color: var(--color-primary); }
-    .bridge-art svg { display: block; width: 100%; height: auto; overflow: visible; }
-    .bridge-art .arch { stroke: currentColor; }
-    .bridge-art .sun { fill: var(--color-accent); }
-    .bridge-art .reflection { stroke: var(--color-primary-light); }
 
     .trust { background: var(--color-primary); color: #F7FAF8; }
     .trust-list { list-style: none; margin: 0; padding: 28px 0; display: grid; grid-template-columns: repeat(3, 1fr); }
@@ -141,8 +140,7 @@
       .container { width: min(calc(100% - 28px), var(--max-width)); }
       .header-inner { min-height: 72px; }
       .header-phone { font-size: .92rem; }
-      .hero-grid { grid-template-columns: 1fr; }
-      .bridge-art { width: min(80%, 360px); margin-inline: auto; order: -1; }
+      .wordmark-sub { max-width: 190px; }
       .trust-list { grid-template-columns: 1fr; padding: 14px 0; }
       .trust-list li { padding: 14px 0; }
       .trust-list li + li { border-left: 0; border-top: 1px solid color-mix(in srgb, #fff 28%, transparent); }
@@ -162,7 +160,10 @@
   <a class="skip-link" href="#main">Skip to main content</a>
   <header>
     <div class="container header-inner">
-      <a class="wordmark" href="#main" aria-label="Bridge One home">Bridge One</a>
+      <a class="wordmark" href="#main" aria-label="Jaden Lee home">
+        <span class="wordmark-name">Jaden Lee</span>
+        <span class="wordmark-sub">Licensed Insurance Agent · CA Lic #4330248</span>
+      </a>
       <a class="header-phone" data-phone-link href="tel:+15622426177"><span data-phone-display>(562) 242-6177</span></a>
     </div>
   </header>
@@ -176,15 +177,8 @@
           <p class="hero-copy">A clear, no-pressure walkthrough of your Medicare options — in plain English, on your schedule.</p>
           <div class="cta-row">
             <a class="button primary" data-phone-link href="tel:+15622426177">Call for a Free Review</a>
-            <a class="button secondary" data-email-link href="mailto:bridgeone.jaden@gmail.com">Email Us</a>
+            <a class="button secondary" data-email-link href="mailto:bridgeone.jaden@gmail.com">Email Me</a>
           </div>
-        </div>
-        <div class="bridge-art" aria-hidden="true">
-          <svg viewBox="0 0 420 330" role="img">
-            <circle class="sun" cx="316" cy="67" r="23" opacity=".95"/>
-            <path class="arch" d="M28 244H392M62 243C87 92 333 92 358 243M96 243V181M324 243V181" fill="none" stroke-width="8" stroke-linecap="round"/>
-            <path class="reflection" d="M76 277c55-19 213-19 268 0M111 304c51-12 148-12 198 0" fill="none" stroke-width="4" stroke-linecap="round" opacity=".62"/>
-          </svg>
         </div>
       </div>
     </section>
@@ -204,7 +198,7 @@
         <div>
           <p class="section-kicker">New to Medicare?</p>
           <h2 id="new-to-title">Turning 65 This Year?</h2>
-          <p class="new-to-copy">Medicare Part A, B, C, and D can feel like alphabet soup. We'll walk you through what each one actually covers, check whether your current medications are included, and confirm your doctors are in-network — in one simple, no-pressure conversation.</p>
+          <p class="new-to-copy">Medicare Part A, B, C, and D can feel like alphabet soup. I'll walk you through what each one actually covers, check whether your current medications are included, and confirm your doctors are in-network — in one simple, no-pressure conversation.</p>
         </div>
         <div>
           <ul class="value-list">
@@ -214,7 +208,7 @@
           </ul>
           <div class="cta-row">
             <a class="button primary" data-phone-link href="tel:+15622426177">Call to Get Started</a>
-            <a class="button secondary" data-email-link href="mailto:bridgeone.jaden@gmail.com">Email Us</a>
+            <a class="button secondary" data-email-link href="mailto:bridgeone.jaden@gmail.com">Email Me</a>
           </div>
         </div>
       </div>
@@ -222,8 +216,8 @@
 
     <section class="section-pad" aria-labelledby="questions-title">
       <div class="container">
-        <h2 id="questions-title">Common Questions We Help With</h2>
-        <p class="section-intro">Medicare decisions can feel technical. We slow the conversation down and help you understand the questions that matter to your situation.</p>
+        <h2 id="questions-title">Common Questions I Help With</h2>
+        <p class="section-intro">Medicare decisions can feel technical. I slow the conversation down and help you understand the questions that matter to your situation.</p>
         <ol class="questions">
           <li><span class="number">01</span><span>Am I still in the right plan for my needs?</span></li>
           <li><span class="number">02</span><span>What does Medicare actually cover — and what doesn't it?</span></li>
@@ -237,9 +231,9 @@
       <div class="container about-grid">
         <div class="name-lockup">
           <strong id="about-title">Jaden Lee</strong>
-          <span>Bridge One</span>
+          <span>Licensed Insurance Agent · CA Lic #4330248</span>
         </div>
-        <p class="about-copy">Jaden Lee is a California-licensed insurance agent based in Southern California, helping local families make sense of Medicare — clearly, patiently, and without pressure. Whether you're reviewing your own coverage or helping a parent, Bridge One is here to walk through it with you.</p>
+        <p class="about-copy">Jaden Lee is a California-licensed insurance agent based in Southern California, helping local families make sense of Medicare — clearly, patiently, and without pressure. Whether you're reviewing your own coverage or helping a parent, I'm here to walk through it with you.</p>
       </div>
     </section>
 
@@ -268,7 +262,7 @@
   <footer>
     <div class="container">
       <div class="footer-meta">
-        <span>Bridge One · CA Lic #<span data-license>4330248</span></span>
+        <span>Jaden Lee · CA Lic #<span data-license>4330248</span></span>
         <span data-address>Southern California</span>
       </div>
       <div class="disclosures">
